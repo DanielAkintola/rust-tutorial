@@ -55,7 +55,7 @@ fn main() {
     let my_name = String::from("victor");
     let green = &my_name;
 
-    drop(my_name);
+    // drop(my_name);
 
     println!("{green}");
 }

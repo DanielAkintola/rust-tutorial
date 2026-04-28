@@ -3,7 +3,7 @@
 use core::time;
 use std::ops::Add;
 
-fn f(S: String) {}
+fn f(s: String) {}
 
 fn print(s: String) {
     println!("{s}")

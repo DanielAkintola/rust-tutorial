@@ -44,16 +44,16 @@ impl Test for Solidity {
 }
 
 
-impl Test for Vyper {
-    fn test(&self, file_path: &str) -> String {
-        format!("vyper test {file_path}")
-    }
-}
+impl Test for Vyper {}
 
 
 
 fn compile(lang: &impl Compiler, file_path: &str) -> String {
     lang.compile(file_path)
+}
+
+fn test(lang: &impl Test, file_path: &str) -> String {
+    lang.test(file_path)
 }
 
 fn main() {
@@ -67,4 +67,9 @@ fn main() {
 
     println!("{}", compile(&vy, "token.vy"));
     println!("{}", compile(&sol, "vault.sol"));
+
+    println!("");
+
+    println!("{}", test(&vy, "token.vy"));
+    println!("{}", test(&sol, "vault.sol"));
 }
